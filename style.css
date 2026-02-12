@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Roboto, sans-serif;
+}
+
+.container {
+    display: grid;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 20px;
+    > :first-child {
+      font-size: 3rem; 
+      font-weight: 800;
+      justify-self: center; 
+    }
+
+    > button {
+        color: white;
+        justify-self: center;
+        background-color: blueviolet;
+        font-size: 20px;
+        font-weight: 800;
+        padding: 10px;
+        width: 130px;
+        height: 50px;
+        border-radius: 10px;
+        border: none;
+    }
+
+    > button:hover {
+        scale: 1.08;
+    }
+
+
+    #score-board {
+        text-align: center;
+        font-size: 2rem;
+        color: blueviolet;
+        justify-self: center; 
+
+    }
+    #game-board {
+        border: none;
+        display: grid;
+        justify-self: center; 
+        grid-template-columns: repeat(3, 1fr);
+
+        .cell {
+            display: flex;
+            border: 3px solid black;
+            width: 100px;
+            height: 100px;
+            color: red;
+            justify-content: center;
+            align-items: center;
+            font-size: 80px;
+            font-weight: 800;
+        }
+
+        .cell:hover {
+            cursor: pointer;
+        }
+        > :nth-child(1), :nth-child(2), :nth-child(3) {
+            border-top: none;
+
+        }
+        > :nth-child(7), :nth-child(8), :nth-child(9) {
+            border-bottom: none;
+
+        }
+        > :nth-child(1), :nth-child(4), :nth-child(7) {
+            border-left: none;
+
+        }
+        > :nth-child(3), :nth-child(6), :nth-child(9) {
+            border-right: none;
+
+        }
+    }
+}
+
+dialog {
+    background-color: cornflowerblue;
+    position: fixed;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    padding: 20px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 8px 8px 30px 10px rgba(0, 0, 0, 0.3);
+
+    form {
+        display: grid;
+        grid-template-rows: repeat(4, 1fr);
+        gap: 10px;
+        justify-items: center;
+        #close {
+            background-color: rgb(190, 5, 5);
+            border: none;
+            padding: 12px;
+            justify-self: end;
+            width: 80px;
+        }
+        #close:focus {
+            outline: none;
+        }
+        input {
+            padding: 10px;
+            width: 200px;
+            border: none;
+            border-radius: 10px;
+            background-color: whitesmoke;
+        }
+        button {
+            color: white;
+            background-color: blueviolet;
+            font-size: 20px;
+            font-weight: 800;
+            width: 100px;
+            border-radius: 10px;
+            border: none;
+        }
+    }
+}
+
+#turn-indicator {
+    display: flex;
+    gap: 10px;
+    justify-self: center;
+    justify-content: center;
+    width: 250px;
+    flex-wrap: wrap;
+    > div {
+        padding: 20px;
+    }
+}
+
+.active {
+    color: white;
+    background-color: green;
+    box-shadow: 0 0 50px rgba(76, 175, 80, 0.8);
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.in-active {
+    color: white;
+    background-color: gray;
+    font-size: 20px;
+    font-weight: 800;
+}
